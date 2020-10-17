@@ -27,7 +27,7 @@ animations = [ {
 radius = 2.88334
 
 [node name="FireBall" type="Area2D"]
-position = Vector2( 2.29072, 3.01843 )
+position = Vector2( 3.64754, 3.84432 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true

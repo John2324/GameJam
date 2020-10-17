@@ -1,10 +1,10 @@
 extends KinematicBody2D
 
-const SPEED = 30
+const SPEED = 100
 const Gravity = 10
 const Jump_Power = -250
 const FLOOR = Vector2(0, -1)
-const fireball = preload ("res://Screens/FireBall.tscn")
+const fireball = preload ("res://Scenes/FireBall.tscn")
 
 var on_ground = false
 var velocity = Vector2()
