@@ -1,11 +1,10 @@
 extends KinematicBody2D
 
-const SPEED = 100
-const Gravity = 10
-const Jump_Power = -250
-const FLOOR = Vector2(0, -1)
+const SPEED = 110
+const GRAVITY = 20
+const JUMP_POWER = -350
+const FLOOR = Vector2.UP
 
-var on_ground = false
 var velocity = Vector2(0,0)
 
 func _physics_process(delta):
@@ -18,21 +17,16 @@ func _physics_process(delta):
 		$AnimatedSprite.play('run')
 		velocity.x = -SPEED
 	else:
-		velocity.x = lerp(velocity.x, 0, 0.3)
+		velocity.x = lerp(velocity.x, 0, 0.2)
 		$AnimatedSprite.play('idel')
 	
-	if Input.is_action_pressed("up"):
-		if on_ground == true:
-			velocity.y = Jump_Power
-			on_ground = false
 	
-		
-	velocity.y += Gravity
-	if is_on_floor():
-		on_ground = true
-	else:
-		on_ground = false
-		
-		
+	velocity.y += GRAVITY
+	
+	
+	if Input.is_action_just_pressed("up") and is_on_floor():
+		velocity.y = JUMP_POWER
+	
+	
 	velocity = move_and_slide(velocity, FLOOR)
 
