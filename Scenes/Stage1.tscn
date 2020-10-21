@@ -7,7 +7,7 @@
 [node name="Stage1" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 24, 72 )
+position = Vector2( 22.6652, 49.3077 )
 
 [node name="FireBall" parent="." instance=ExtResource( 1 )]
 position = Vector2( 10.2907, 75.0184 )
