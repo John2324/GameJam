@@ -1,7 +1,9 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/FireBall.gd" type="Script" id=1]
-[ext_resource path="res://art/Monster_Creatures_Fantasy(Version 1.3)/Flying eye/projectile_sprite.png" type="Texture" id=2]
+[ext_resource path="res://Art/Monster-Creatures-Fantasy/Flying eye/projectile_sprite.png" type="Texture" id=2]
+
+
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
