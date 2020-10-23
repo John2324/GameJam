@@ -1,78 +1,23 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://art/characters.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/player.gd" type="Script" id=2]
+[ext_resource path="res://Art/Sprite-Frames/player.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 32, 32 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.36614
+height = 5.75467
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 128, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 160, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 1 )
-region = Rect2( 384, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 1 )
-region = Rect2( 416, 0, 32, 32 )
-
-[sub_resource type="SpriteFrames" id=10]
-animations = [ {
-"frames": [ SubResource( 1 ) ],
-"loop": true,
-"name": "idel",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ) ],
-"loop": true,
-"name": "run",
-"speed": 10.0
-} ]
-
-[sub_resource type="CapsuleShape2D" id=11]
-radius = 7.64367
-height = 5.45597
-
-[node name="player" type="KinematicBody2D"]
-position = Vector2( 24.037, 6.31626 )
+[node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( -6.11557, 5.13068 )
-scale = Vector2( 1.02043, 0.964242 )
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -15.8116, -0.875035 )
 scale = Vector2( 1.02043, 0.964242 )
-frames = SubResource( 10 )
+frames = ExtResource( 1 )
 animation = "idel"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -15.4284, 4.83426 )
-shape = SubResource( 11 )
+position = Vector2( 0.264893, 6.15859 )
+shape = SubResource( 1 )
